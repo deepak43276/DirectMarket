@@ -9,7 +9,7 @@ include("../Functions/functions.php");
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>AgroCraft</title>
+     <title>FarmSync</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <script src="https://kit.fontawesome.com/c587fc1763.js" crossorigin="anonymous"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -932,25 +932,20 @@ include("../Functions/functions.php");
 
      <br><br>
      <section id="footer" class="myfooter">
-                <div class="container">
-                     <div class="row text-center text-xs-center text-sm-left text-md-left">
-                          <div class="col aligncenter">
-                               <br>
-                               <h5>Payment Option</h5>
-                               <img src="../Images/Website/paytm1.jpg" alt="paytm">
-                               <img src="../Images/Website/cod.jpg" alt="paytm" style="height:37px">
-                          </div>
-                     </div>
-                     
-                     <div class="row">
-                          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
-                               <p>Direct Market is a trading Company for farmers and Buyers</p>
-                               <p class="h6">Copy All right Reversed.</p>
-                          </div>
-                          </hr>
-                     </div>
-                </div>
-           </section>
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col aligncenter">
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
+                <p>Farm Sync is a trading Company for farmers and Buyers</p>
+                <p class="h6">© <?php echo date("Y"); ?> Farm Sync All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 

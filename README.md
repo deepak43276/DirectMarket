@@ -41,7 +41,7 @@ Direct Market Access is a comprehensive e-commerce platform designed to connect 
 ## Getting Started
 
 1. Clone the repository.
-2. Set up a local web server (e.g., XAMPP) and import the provided SQL database (`AgroCraft.sql` or `agrocraft.sql`).
+2. Set up a local web server (e.g., XAMPP) and import the provided SQL database (`FarmSync.sql` or `farmsync.sql`).
 3. Configure database credentials in `Includes/db.php`.
 4. Access the application via your local server.
 
@@ -57,7 +57,7 @@ Direct Market Access is a comprehensive e-commerce platform designed to connect 
 
 ## Contact
 
-For inquiries, please contact the project maintainers at [agrocraft6@gmail.com](mailto:agrocraft6@gmail.com).
+For inquiries, please contact the project maintainers at [farmsync@example.com](mailto:farmsync@example.com).
 
 ---
 

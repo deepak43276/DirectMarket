@@ -876,7 +876,7 @@
                      <span class="navbar-toggler-icon"><i class="fas fa-bars p-1 " style="color:green;font-size:20px; "></i></span>
                 </button>
                 <a class="float-left" href="farmerHomepage.php">
-                     <img src="market.png" class="float-left mr-2 moblogo" alt="Logo" style="height:50px;">
+                     <img src="farmsync.png" class="float-left mr-2 moblogo" alt="Logo" style="height:50px;">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -951,9 +951,7 @@
                 <div class="col-md-3 col-sm-12">
                      <a href="Transactions.php" id="navbar"><i class="fa fa-exchange" aria-hidden="true"></i><label>My Transactions</label></a>
                 </div>
-                <div class="col-md-3 col-sm-12">
-                     <a href="CallCenter.php" id="navbar"><i class="fa fa-phone fa-rotate-vertical" aria-hidden="true"></i><label>Call Centers/SMS</label></a>
-                </div>
+               
            </div>
            <hr>
 
@@ -983,63 +981,26 @@
            </div>
 
            <br><br>
-           <div class="features container">
-                <h1 style="font-weight: bold;color:black; text-align:center">Standout Features</h1>
-                <div class="card-deck row text-center" style="display: flex; flex-wrap: wrap;">
-                     <div class="card">
-                          <p class="aligncenter">
-                               <img class="card-img-top image" src="../Images/Homepage/sms.png" alt="Card image cap" width="250px" height="200px">
-                          </p>
-                          <div class="card-body">
-                               <h4 class="card-title font-weight-bold">Sms System </h4>
-                               <br>
-                               <h5 class="card-text">Upload and Edit Your Products via SMS </h5>
-                          </div>
-                     </div>
-                     <div class="card">
-                          <p class="aligncenter">
-                               <img class="card-img-top image" src="../Images/Homepage/handshake.png" alt="Card image cap" width="250px" height="200px">
-                          </p>
-                          <div class="card-body">
-                               <h4 class="card-title font-weight-bold">Buyer Connection</h4>
-                               <br>
-                               <h5 class="card-text">Get in direct touch with the buyer to satisfy its need </h5>
-                          </div>
-                     </div>
-                     <div class="card">
-                          <p class="aligncenter">
-                               <img class="card-img-top image" src="../Images/Homepage/farmer.png" alt="Card image cap" width="250px" height="200px">
-                          </p>
-                          <div class="card-body">
-                               <h4 class="card-title font-weight-bold">Farmer Group Formation</h4>
-                               <br>
-                               <h5 class="card-text">Get in touch with other farmers making your own community where you can ask for help</h5>
-                          </div>
-                     </div>
-                </div>
+     
+              
            </div>
            </div>
            <br> <br>
            <section id="footer" class="myfooter">
-                <div class="container">
-                     <div class="row text-center text-xs-center text-sm-left text-md-left">
-                          <div class="col aligncenter">
-                               <br>
-                               <h5>Payment Option</h5>
-                               <img src="../Images/Website/paytm1.jpg" alt="paytm">
-                               <img src="../Images/Website/cod.jpg" alt="paytm" style="height:37px">
-                          </div>
-                     </div>
-                     
-                     <div class="row">
-                          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
-                               <p>Direct Market is a trading Company for farmers and Buyers</p>
-                               <p class="h6">Copy All right Reversed.</p>
-                          </div>
-                          </hr>
-                     </div>
-                </div>
-           </section>
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col aligncenter">
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
+                <p>Farm Sync is a trading Company for farmers and Buyers</p>
+                <p class="h6">© <?php echo date("Y"); ?> Farm Sync All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
       </body>
 

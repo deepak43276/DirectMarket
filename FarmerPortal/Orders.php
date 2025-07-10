@@ -945,40 +945,21 @@
 
 
 
-     <div class="footer">
-          <hr>
-          <label class="payment">Payment Options:-</label>
-          <div class="cash"><img src="../Images/Website/cash.jpg" height="75px" width="125px"></div>
-          <div class="patym"><img src="../Images/Website/petm.jpg" height="75px" width="125px"></div>
-     </div><br><br>
-     <h3><span> GET SOCIAL WITH US </span></h3>
-     </div>
-     <div class="morefooter">
-
-          <div class="call">
-               <i class="fas fa-phone-alt call_color"></i>
-               <a href="#" style="color:black;">+91-8191046421</a>
-          </div>
-
-          <div class="instagram"><img src="../Images/Website/Insta.jpg" height="45px" width="60px">
-          </div>
-
-          <div class="gmail">
-               <img src="../Images/Website/gmail.jpg" height="30px" width="50px">
-          </div>
-
-     </div>
-     <div class="instaid">
-          <div class="text"><a href="#" style="color:black;">@AgroCraft</a></div>
-
-          <div class="gmailid">
-               <a href="#" class="hypher" style="color:black;">agrocraft6@gmail.com</a>
-          </div>
-
-     </div>
-     <div class="copy">
-          <h5 style="test-align:center; padding-top:40px;margin-left:650px; background-color:'grey';">Copyright &copy; 2022 by www.AgroCraft.com</h5>
-     </div>
+     <section id="footer" class="myfooter">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col aligncenter">
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
+                <p>Farm Sync is a trading Company for farmers and Buyers</p>
+                <p class="h6">© <?php echo date("Y"); ?> Farm Sync All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 

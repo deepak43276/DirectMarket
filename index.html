@@ -1,19 +1,513 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>DIRECT MARKET</title>
-	
-<link rel="stylesheet" type="text/css" href="Styles/AgroCraft.css">	
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARM SYNC | Connecting Farmers & Buyers</title>
+    <link rel="icon" type="image/png" href="farmsync.png" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #60ad5e;
+            --secondary: #ff8f00;
+            --dark: #263238;
+            --light: #f5f5f5;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+        }
+        
+        /* Split Screen Layout */
+        .split-screen {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Left Section - Project Showcase */
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.95), rgba(46, 125, 50, 0.85));
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .left-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23ffffff10" width="50" height="50" x="0" y="0"></rect><rect fill="%23ffffff10" width="50" height="50" x="50" y="50"></rect></svg>');
+            background-size: 30px 30px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 80%;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-out;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            animation: slideUp 1.4s ease-out;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 160px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .feature-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Right Section - Login Options */
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            animation: slideIn 1s ease-out;
+            transform-style: preserve-3d;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .login-header {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .login-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .login-subtitle {
+            font-size: 1rem;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 0 2rem 2rem;
+        }
+        
+        .role-button {
+            position: relative;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            overflow: hidden;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .role-button i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        #Farmerbutton {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        #Buyerbutton {
+            background-color: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 143, 0, 0.3);
+        }
+        
+        .role-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        
+        .role-button:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .role-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        #link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Floating Elements */
+        .floating {
+            position: absolute;
+            z-index: 1;
+            animation: float 15s infinite linear;
+            opacity: 0.1;
+        }
+        
+        .floating.leaf {
+            color: var(--primary);
+            animation-name: float;
+        }
+        
+        .floating.coin {
+            color: var(--secondary);
+            animation-name: floatReverse;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(50px, -50px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes floatReverse {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, 50px) rotate(-180deg); }
+            100% { transform: translate(0, 0) rotate(-360deg); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .split-screen {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .left-section, .right-section {
+                flex: none;
+                width: 100%;
+                padding: 2rem 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+                max-width: 90%;
+            }
+            
+            .feature-card {
+                width: 140px;
+                padding: 1rem;
+            }
+            
+            .login-container {
+                max-width: 90%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                gap: 1rem;
+            }
+            
+            .feature-card {
+                width: 120px;
+                padding: 0.8rem;
+            }
+            
+            .feature-icon {
+                font-size: 2rem;
+            }
+            
+            .login-title {
+                font-size: 1.8rem;
+            }
+            
+            .role-button {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-card {
+                width: 80%;
+                max-width: 250px;
+            }
+            
+            .login-title {
+                font-size: 1.5rem;
+            }
+            
+            .login-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .button-container {
+                gap: 1rem;
+                padding: 0 1.5rem 1.5rem;
+            }
+        }
+    </style>
 </head>
+<body>
+    <div class="split-screen">
+        <!-- Left Section - Project Showcase -->
+        <div class="left-section">
+            <!-- Floating decorative elements -->
+            <i class="floating leaf fas fa-leaf" style="top:10%; left:10%; font-size: 3rem; animation-delay: 0s;"></i>
+            <i class="floating coin fas fa-sack-dollar" style="top:20%; right:15%; font-size: 2.5rem; animation-delay: 2s;"></i>
+            <i class="floating leaf fas fa-tractor" style="bottom:15%; left:15%; font-size: 3rem; animation-delay: 4s;"></i>
+            <i class="floating coin fas fa-seedling" style="bottom:25%; right:20%; font-size: 2.5rem; animation-delay: 6s;"></i>
+            
+            <div class="logo">FARM SYNC</div>
+            <div class="tagline">Connecting farmers directly with buyers for fair trade and better prices</div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="feature-text">Direct Trade</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="feature-text">Fair Prices</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                    <div class="feature-text">Fast Delivery</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="feature-text">Fresh Produce</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Section - Login Options -->
+        <div class="right-section">
+            <!-- More floating elements -->
+            <i class="floating leaf fas fa-wheat" style="top:15%; left:15%; font-size: 2rem; animation-delay: 1s;"></i>
+            <i class="floating coin fas fa-shopping-basket" style="top:25%; right:20%; font-size: 2rem; animation-delay: 3s;"></i>
+            
+            <div class="login-container">
+                <div class="login-header">
+                    <h1 class="login-title">Welcome</h1>
+                    <p class="login-subtitle">Join the agricultural revolution</p>
+                </div>
+                
+                <div class="button-container">
+                    <button id="Farmerbutton" class="role-button">
+                        <a id="link" href="auth/FarmerLogin.php"><i class="fas fa-tractor"></i> FARMER</a>
+                    </button>
+                    <button id="Buyerbutton" class="role-button">
+                        <a id="link" href="auth/BuyerLogin.php"><i class="fas fa-store"></i> BUYER</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<body >
-	
-	<div id ="WELCOME">WELCOME TO DIRECT MARKET <div id="are">ARE YOU A</div></h1>
-	<span id="linebreak"></span>
-	<label id="Farmerbutton"><a id = "link" href="auth/FarmerLogin.php">FARMER</a></label>
-	<label id="Buyerbutton"><a id = "link" href="auth/BuyerLogin.php">BUYER</a></label>
-	
+    <script>
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.role-button');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const x = e.pageX - button.offsetLeft;
+                    const y = e.pageY - button.offsetTop;
+                    
+                    button.style.setProperty('--x', x + 'px');
+                    button.style.setProperty('--y', y + 'px');
+                });
+            });
+            
+            // Add more floating elements dynamically
+            const leftSection = document.querySelector('.left-section');
+            const rightSection = document.querySelector('.right-section');
+            const types = ['leaf', 'coin'];
+            const icons = ['leaf', 'wheat', 'seedling', 'apple-alt', 'carrot', 'money-bill-wave'];
+            
+            for (let i = 0; i < 6; i++) {
+                const element = document.createElement('i');
+                const type = types[Math.floor(Math.random() * types.length)];
+                const icon = type === 'leaf' ? 
+                    icons[Math.floor(Math.random() * 3)] : 
+                    icons[Math.floor(Math.random() * 3) + 3];
+                
+                element.className = `floating ${type} fas fa-${icon}`;
+                
+                // Random positioning
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 12;
+                const duration = 15 + Math.random() * 15;
+                const size = 30 + Math.random() * 50;
+                
+                element.style.top = `${top}%`;
+                element.style.left = `${left}%`;
+                element.style.animationDelay = `${delay}s`;
+                element.style.animationDuration = `${duration}s`;
+                element.style.fontSize = `${size}px`;
+                
+                // Add to random section
+                if (Math.random() > 0.5) {
+                    leftSection.appendChild(element);
+                } else {
+                    rightSection.appendChild(element);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

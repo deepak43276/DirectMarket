@@ -410,25 +410,20 @@ include("../Functions/functions.php");
 
 
     <section id="footer" class="myfooter">
-                <div class="container">
-                     <div class="row text-center text-xs-center text-sm-left text-md-left">
-                          <div class="col aligncenter">
-                               <br>
-                               <h5>Payment Option</h5>
-                               <img src="../Images/Website/paytm1.jpg" alt="paytm">
-                               <img src="../Images/Website/cod.jpg" alt="paytm" style="height:37px">
-                          </div>
-                     </div>
-                     
-                     <div class="row">
-                          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
-                               <p>Direct Market is a trading Company for farmers and Buyers</p>
-                               <p class="h6">Copy All right Reversed.</p>
-                          </div>
-                          </hr>
-                     </div>
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col aligncenter">
+                    <br>
                 </div>
-           </section>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
+                    <p>Farm Sync is a trading Company for farmers and Buyers</p>
+                    <p class="h6">© <?php echo date("Y"); ?> Farm Sync All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

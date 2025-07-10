@@ -353,7 +353,12 @@ if (isset($_POST['register'])) {
 		$encryption_iv
 	);
 
-	if (strcmp($password, $confirmpassword) == 0) {
+	// Check if username already exists
+	$check_username_query = "SELECT buyer_username FROM buyerregistration WHERE buyer_username = '$username' LIMIT 1";
+	$check_username_result = mysqli_query($con, $check_username_query);
+	if (mysqli_num_rows($check_username_result) > 0) {
+		echo "<script>alert('Username already exists. Please choose a different username.');</script>";
+	} else if (strcmp($password, $confirmpassword) == 0) {
 
 		$query = "insert into buyerregistration (buyer_name,buyer_phone,buyer_addr,buyer_comp,
 		buyer_license,buyer_bank,buyer_pan,buyer_mail,buyer_username,buyer_password) 
