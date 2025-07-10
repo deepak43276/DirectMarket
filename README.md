@@ -1,40 +1,64 @@
-# Agrocraft An E-Commerce Website For Fresh Farm Produce Vegetables And Fruits
+# Direct Market Access
 
-#### An E-Commerce Website for farmers to sell their produce at better rates and buyers can purchase those produce via website using categorical and location wise search system. The one of main goal of this project is to eliminate middleman and provide an efficient and robust alternative method to ease the flow of overall market.
+Direct Market Access is a comprehensive e-commerce platform designed to connect farmers directly with buyers across India. The platform empowers farmers to sell their fresh produce—fruits, vegetables, and crops—at better rates by eliminating middlemen, thus ensuring fair pricing and efficient market access.
 
-#### The applications supports CURD operation for products uploaded by farmers , and it is completely dynamic website build with MySql database and PHP as backend. 
+## Features
 
-### Starter Images
+- **Farmer Portal**
+  - Register and manage farmer profiles
+  - Add, edit, and manage products (crops, fruits, vegetables)
+  - View and manage transactions and orders
+  - Upload and edit products via SMS
+  - Access call center support
 
+- **Buyer Portal**
+  - Register and manage buyer profiles
+  - Browse products by category and location
+  - Add products to cart and checkout
+  - Search with advanced filters
+  - View detailed product and farmer profiles
 
-<div align= "center"> 
-<img src = "./Demo_Images/1.png" width = 400 height = 250 align = center> <br> <hr> <br>
+- **Admin Panel**
+  - Manage products and images
+  - Oversee database and user management
 
-<img src = "./Demo_Images/2.png" width = 400 height = 250> <p>Buyer Homepage</p> <hr>
+- **E-Commerce Capabilities**
+  - Fixed price selling and enquiry-based buying
+  - Raise future demands for products
+  - Multiple payment options (Cash, Paytm, etc.)
 
-<img src = "./Demo_Images/3.png" width = 400 height = 250> <p>Products </p> <hr>
+- **Other Highlights**
+  - Mobile and SMS support for farmers
+  - Social media and contact integration
+  - Secure authentication for buyers and farmers
 
-<img src = "./Demo_Images/4.png" width = 400 height = 250> <p> Categorical and Location Wise Search</p> <br> 
+## Technology Stack
 
-</div>
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+- **Backend:** PHP
+- **Database:** MySQL
 
-<div align= "center">  
-  
-## <a href = "https://youtu.be/f0YMvE3muIc" > Click Here </a> To Watch Demo Video
+## Getting Started
 
-</div>
+1. Clone the repository.
+2. Set up a local web server (e.g., XAMPP) and import the provided SQL database (`AgroCraft.sql` or `agrocraft.sql`).
+3. Configure database credentials in `Includes/db.php`.
+4. Access the application via your local server.
 
-### Technology Stack 
-* HTML
-* CSS
-* JAVASCRIPT
-* PHP
-* BOOTSTRAP
+## Folder Structure
 
-### Made By
-<a href = "https://www.linkedin.com/in/abhishek-gupta-a745221a0/" >Abhishek Gupta </a><br>
-<a href = "https://www.linkedin.com/in/omkar-bhabal-620b56192/" >Omkar Bhabal</a> <br>
-<a href = "https://www.linkedin.com/in/ansh-chhadva-ab3902183/" >Ansh Chhadva</a> <br>
-<a href = "#" >Calista Gonsalves </a> <br>
-<a href = "https://www.linkedin.com/in/gladina-raymond-2a56a8194/" >Gladina Raymond </a><br>
-<a href = "https://www.linkedin.com/in/arpit-bhat-00a37816a/" >Arpit Bhat</a> <br>
+- `FarmerPortal/` – Farmer dashboard and features
+- `BuyerPortal/` and `BuyerPortal2/` – Buyer dashboard and features
+- `Admin/` – Admin panel and product management
+- `Includes/` – Shared PHP includes and database connection
+- `Images/` – Product and website images
+- `Styles/` – CSS stylesheets
+- `Documents/` – Documentation and database scripts
+
+## Contact
+
+For inquiries, please contact the project maintainers at [agrocraft6@gmail.com](mailto:agrocraft6@gmail.com).
+
+---
+
+**Note:** This project is provided without any open source license. All rights are reserved by the respective authors and contributors. You may not copy, modify, distribute, or use any part of this project without explicit written permission from the copyright holders.
